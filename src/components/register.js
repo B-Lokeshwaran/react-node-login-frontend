@@ -29,7 +29,7 @@ const Register =()=>{
         const { name,email,password,reEnterPassword} = user
         if( name && email && password && (password === reEnterPassword)){
             
-            axios.post("https://loginandregisterbackend.herokuapp.com" ,user)
+            axios.post("https://loginandregisterbackend.herokuapp.com/register" ,user)
             .then( res => console.log(res))
             alert("you registered successfully")
         }
