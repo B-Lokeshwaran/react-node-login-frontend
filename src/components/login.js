@@ -28,7 +28,7 @@ const Login =()=>{
     }
 
     const login1 =() =>{
-       const data= axios.post("https://loginandregisterbackend.herokuapp.com" ,user)
+       const data= axios.post("https://loginandregisterbackend.herokuapp.com/login" ,user)
         .then(res =>{
 
 
