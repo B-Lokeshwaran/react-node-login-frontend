@@ -48,7 +48,14 @@ const{name,email,password,reEnterPassword} = user
         const data= axios.post("https://loginandregisterbackend.herokuapp.com/register" ,user)
         .then(res=>{
             console.log(res.data.message)
-            if(name&& email && password && (password === reEnterPassword)){
+
+           if(email===user.email && name===user.name){
+               alert("User already registered")
+           } 
+           else if(password !== reEnterPassword){
+               alert("Paswword mismatches")
+           }
+            else if(name&& email && password && (password === reEnterPassword)){
 
             
             alert("You Successfully Registered")
@@ -57,6 +64,28 @@ const{name,email,password,reEnterPassword} = user
             else{
                 alert("Not Registered")
             }
+
+            // if(name.value.length===0){
+            //     console.log(name.value)
+            //     alert("enter the  valid Name")
+            // }
+            // else if(email.value.length===0){
+            //     alert("Please enter valid mail")
+            // }
+            // else if(password.value.length===0){
+            //     alert("Please enter the password")
+            // }
+            // else if(name.value.length&&email.value.length&&password.value.length===0){
+            //     alert("Please enter the valid name,mail and password")
+            // }
+            // else if(password !== reEnterPassword){
+            //     alert("Password mismatches")
+            // }
+            // else{
+            //     alert("You Successfully Registered")
+            // }
+            // navigate("/register")
+            
         })
     }
 
